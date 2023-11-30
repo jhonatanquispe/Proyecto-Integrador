@@ -5,7 +5,7 @@ var dbConn=require('../lib/db');
 
 /* LISTAR */
 router.get('/', function(req, res, next) {
-    dbConn.query('SELECT * FROM clientes ORDER BY id desc',function(err,rows)     {
+    dbConn.query('SELECT * FROM cliente ORDER BY id desc',function(err,rows)     {
       if(err) {
           req.flash('error', err);
           res.render('cliente/index',{data:''});   
@@ -18,32 +18,47 @@ router.get('/', function(req, res, next) {
   /* VER FORMULARIO ADD */
   router.get('/add', function(req, res, next) {    
     res.render('cliente/add', {
-        razonsocial: ''       
+        razonsocial: '',
+        correo: '',
+        direccion: '',
+        celular: ''                                                                                             
     })
   })
   
   /* INSERTAR EN BASE DE DATOS */
   router.post('/add', function(req, res, next) {    
-    let nombre = req.body.razonsocial;
+    let razonsocial = req.body.razonsocial;
+    let correo = req.body.correo;
+    let direccion = req.body.direccion;
+    let celular = req.body.celular;
     let errors = false;
   
     if(razonsocial.length === 0) {
         errors = true;
         req.flash('error', "Please enter name");
         res.render('cliente/add', {
-            razonsocial : razonsocial
+            razonsocial:razonsocial,
+            correo:correo,
+            direccion:direccion,
+            celular:celular
     })
 }
     // if no error
     if(!errors) {
         var form_data = {
-            razonsocial: razonsocial
+            razonsocial: razonsocial,
+            correo:correo,
+            direccion:direccion,
+            celular:celular
         }
-        dbConn.query('INSERT INTO clientes SET ?', form_data, function(err, result) {
+        dbConn.query('INSERT INTO cliente SET ?', form_data, function(err, result) {
             if (err) {
                 req.flash('error', err)
                 res.render('cliente/add', {
-                    name: form_data.razonsocial                   
+                    name: form_data.razonsocial,   
+                    name: form_data.correo ,
+                    name: form_data.direccion,
+                    name: form_data.celular                 
                 })
             } else {                
                 req.flash('success', 'cliente successfully added');
@@ -56,7 +71,7 @@ router.get('/', function(req, res, next) {
   /* VER FORMULARIO EDITAR */
   router.get('/edit/(:id)', function(req, res, next) {
     let id = req.params.id;
-    dbConn.query('SELECT * FROM clientes WHERE id = ' + id, function(err, rows, fields) {
+    dbConn.query('SELECT * FROM cliente WHERE id = ' + id, function(err, rows, fields) {
         if(err) throw err
         if (rows.length <= 0) {
             req.flash('error', 'Registro not found with id = ' + id)
@@ -65,7 +80,10 @@ router.get('/', function(req, res, next) {
         else {
             res.render('cliente/edit', {
                 id: rows[0].id,
-                razonsocial: rows[0].razonsocial
+                razonsocial: rows[0].razonsocial,
+                correo: rows[0].correo,
+                direccion: rows[0].direccion,
+                celular: rows[0].celular
             })
         }
     })
@@ -74,28 +92,41 @@ router.get('/', function(req, res, next) {
   /* ACTUALIZAR FORMULARIO BASE DE DATOS */
   router.post('/update/:id', function(req, res, next) {
     let id = req.params.id;
-    let nombre = req.body.razonsocial;
+    let razonsocial = req.body.razonsocial;
+    let correo = req.body.correo;
+    let direccion = req.body.direccion;
+    let celular = req.body.celular;
     let errors = false;
   
-    if(nombre.length === 0) {
+    if(razonsocial.length === 0) {
         errors = true;
         req.flash('error', "Please enter name");
         res.render('cliente/edit', {
             id: req.params.id,
-            razonsocial: razonsocial
+            razonsocial: razonsocial,
+            correo:correo,
+            direccion:direccion,
+            celular:celular
+            
         })
     }
   
     if( !errors ) {   
         var form_data = {
-            razonsocial: razonsocial
+            razonsocial: razonsocial,
+            correo:correo,
+            direccion:direccion,
+            celular:celular
         }
-        dbConn.query('UPDATE clientes SET ? WHERE id = ' + id, form_data, function(err, result) {
+        dbConn.query('UPDATE cliente SET ? WHERE id = ' + id, form_data, function(err, result) {
             if (err) {
                 req.flash('error', err)
                 res.render('cliente/edit', {
                     id: req.params.id,
-                    razonsocial: form_data.razonsocial
+                    razonsocial: form_data.razonsocial,
+                    correo: form_data.corre,
+                    direccion: form_data.direccion,
+                    celular: form_data.celular
                 })
             } else {
                 req.flash('success', 'Registro successfully updated');
@@ -108,7 +139,7 @@ router.get('/', function(req, res, next) {
   /* ELIMINAR REGISTRO BASE DE DATOS */
   router.get('/delete/(:id)', function(req, res, next) {
     let id = req.params.id;
-    dbConn.query('DELETE FROM clientes WHERE id = ' + id, function(err, result) {
+    dbConn.query('DELETE FROM cliente WHERE id = ' + id, function(err, result) {
         if (err) {
             req.flash('error', err)
             res.redirect('/cliente')

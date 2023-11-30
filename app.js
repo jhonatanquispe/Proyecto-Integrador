@@ -60,5 +60,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+app.get('/api/users', (req,res)=>{
+  conexion.query('SELECT * FROM users100', (error,filas)=>{
+      if(error){
+          throw error;
+      }else{
+          res.send(filas);
+      }
+  })
+});
 
 module.exports = app;
