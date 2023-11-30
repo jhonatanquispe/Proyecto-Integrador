@@ -1,0 +1,818 @@
+<title>Inicio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="https://www.enmuebles.com/themes/at_marcus/assets/css/theme.css" type="text/css"
+    media="all">
+<link rel="stylesheet" href="https://www.enmuebles.com/themes/at_marcus/modules/appagebuilder/views/css/styles.css"
+    type="text/css" media="all">
+<main id="page">
+    <nav class="bg-gray-950">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Mobile menu button-->
+              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <!--
+                  Icon when menu is closed.
+      
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!--
+                  Icon when menu is open.
+      
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex flex-shrink-0 items-center">
+                <h1></h1>
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <a href="/logout" class=" text-white rounded-md px-3 py-2 text-sm font-medium" >Inicio</a>
+                  <a href="/tienda" class="text-gray-300 bg-gray-900 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"aria-current="page">Tienda</a>
+                  <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
+                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contáctos</a>
+                </div>
+              </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          
+      
+              <!-- Profile dropdown -->
+              <div x-data="{ open: false }" class="relative ml-3">
+                <div>
+                  <button  @click="open = ! open" type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <span class="absolute -inset-1.5"></span>
+                    <span class="sr-only">Open user menu</span>
+                    <img class="h-8 w-8 rounded-full" src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(67).webp" alt="">
+                  </button>
+                </div>
+      
+                <!--
+                  Dropdown menu, show/hide based on menu state.
+      
+                  Entering: "transition ease-out duration-100"
+                    From: "transform opacity-0 scale-95"
+                    To: "transform opacity-100 scale-100"
+                  Leaving: "transition ease-in duration-75"
+                    From: "transform opacity-100 scale-100"
+                    To: "transform opacity-0 scale-95"
+                -->
+                <div x-show="open" @click.outside="open = false" class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                  <!-- Active: "bg-gray-100", Not Active: "" -->
+                  <a href="/login" class="block px-2 py-0 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Login</a>
+                   </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pb-3 pt-2">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+          </div>
+        </div>
+      </nav>
+    <section id="wrapper">
+        <div class="container container-large" id="">
+            <div class="row">
+                <div id="left-column" class="sidebar col-xs-12 col-sm-12 col-md-4 col-lg-3">
+                    <div id="search_filters_wrapper" class="hidden-sm-down">
+                        <div id="search_filters">
+                            <p class="text-uppercase h6 hidden-sm-down">Filtrar por</p>
+                            <section class="facet clearfix">
+                                <p class="h6 facet-title hidden-sm-down">Color</p>
+                                <ul id="facet_18879" class="collapse">
+                                    <li>
+                                        <label class="facet-label" for="facet_input_18879_33">
+                                            <span class="custom-checkbox">
+                                                <input id="facet_input_18879_33" data-search-url="" type="checkbox">
+                                                <span class="color" style="background-color:#b19e65"></span>
+                                            </span>
+
+                                            <a href="" class="_gray-darker search-link js-search-link" rel="nofollow">
+                                                Caramelo
+                                                <span class="magnitude">(1)</span>
+                                            </a>
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="facet-label" for="facet_input_18879_34">
+                                            <span class="custom-checkbox">
+                                                <input id="facet_input_18879_34" data-search-url="" type="checkbox">
+                                                <span class="color" style="background-color:#4d3925"></span>
+                                            </span>
+
+                                            <a href="" class="_gray-darker search-link js-search-link" rel="nofollow">
+                                                Carapacho
+                                                <span class="magnitude">(1)</span>
+                                            </a>
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="facet-label" for="facet_input_18879_35">
+                                            <span class="custom-checkbox">
+                                                <input id="facet_input_18879_35" data-search-url="" type="checkbox">
+                                                <span class="color" style="background-color:#fffff8"></span>
+                                            </span>
+
+                                            <a href="" class="_gray-darker search-link js-search-link" rel="nofollow">
+                                                Ivori
+                                                <span class="magnitude">(6)</span>
+                                            </a>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </section>
+                            <section class="facet clearfix">
+
+                            </section>
+                            <section class="facet clearfix">
+                                <p class="h6 facet-title hidden-sm-down">Textura de tela</p>
+
+                                <div class="title hidden-md-up" data-target="#facet_6389" data-toggle="collapse">
+                                    <p class="h6 facet-title">Textura de tela</p>
+                                    <span class="navbar-toggler collapse-icons">
+                                        <i class="material-icons add"></i>
+                                        <i class="material-icons remove"></i>
+                                    </span>
+                                </div>
+                                <ul id="facet_6389" class="collapse">
+
+                                    <li>
+                                        <label class="facet-label" for="facet_input_6389_0">
+                                            <span class="custom-checkbox">
+                                                <input id="facet_input_6389_0" data-search-url="" type="checkbox">
+                                                <span class="ps-shown-by-js"><i
+                                                        class="material-icons rtl-no-flip checkbox-checked"></i></span>
+                                            </span>
+
+                                            <a href="" class="_gray-darker search-link js-search-link" rel="nofollow">
+                                                Textura Gamuza - Velvet
+                                                <span class="magnitude">(77)</span>
+                                            </a>
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="facet-label" for="facet_input_6389_1">
+                                            <span class="custom-checkbox">
+                                                <input id="facet_input_6389_1" data-search-url="" type="checkbox">
+                                                <span class="ps-shown-by-js"><i
+                                                        class="material-icons rtl-no-flip checkbox-checked"></i></span>
+                                            </span>
+
+                                            <a href="" class="_gray-darker search-link js-search-link" rel="nofollow">
+                                                Textura Lino - Varsovia
+                                                <span class="magnitude">(76)</span>
+                                            </a>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="facet-label" for="facet_input_6389_2">
+                                            <span class="custom-checkbox">
+                                                <input id="facet_input_6389_2" data-search-url="" type="checkbox">
+                                                <span class="ps-shown-by-js"><i
+                                                        class="material-icons rtl-no-flip checkbox-checked"></i></span>
+                                            </span>
+
+                                            <a href="" class="_gray-darker search-link js-search-link" rel="nofollow">
+                                                Textura Cuero - Pranna
+                                                <span class="magnitude">(1)</span>
+                                            </a>
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="facet-label" for="facet_input_6389_3">
+                                            <span class="custom-checkbox">
+                                                <input id="facet_input_6389_3" data-search-url="" type="checkbox">
+                                                <span class="ps-shown-by-js"><i
+                                                        class="material-icons rtl-no-flip checkbox-checked"></i></span>
+                                            </span>
+
+                                            <a href="" class="_gray-darker search-link js-search-link" rel="nofollow">
+                                                Gamuza Texturizada - Omar
+                                                <span class="magnitude">(1)</span>
+                                            </a>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div id="content-wrapper" class="left-column col-xs-12 col-sm-12 col-md-8 col-lg-9">
+                    <section id="main">
+                        <section id="products">
+                            <div>
+                                <div id="js-product-list-top" class="products-selection">
+                                    <div>
+                                        <div id="js-product-list">
+                                            <div class="products">
+                                                <div class="product_list grid  plist-default-1 ">
+                                                    <div class="row">
+                                                       
+                                                        <div
+                                                            class="ajax_block_product col-sp-12 col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 last-in-line first-item-of-tablet-line first-item-of-mobile-line">
+                                                            <article class="product-miniature js-product-miniature"
+                                                                data-id-product="28" data-id-product-attribute="1692"
+                                                                itemscope="" itemtype="http://schema.org/Product">
+                                                                <div class="thumbnail-container">
+                                                                    <div class="product-image">
+                                                                        <div class="leo-more-info hidden-md-down"
+                                                                            data-idproduct="28">
+                                                                            <div class="col-1">
+                                                                                <div class="views_block">
+                                                                                    <span class="view_scroll_spacer">
+                                                                                        <a class="view_scroll_left view_scroll_left_28 disable"
+                                                                                            rel="28" title="Other views"
+                                                                                            href="javascript:{}"><em
+                                                                                                class="fa fa-chevron-up"></em></a></span>
+                                                                                    <div
+                                                                                        class="thumbs_list thumbs_list_28">
+                                                                                        <ul class="thumbs_list_frame">
+                                                                                            <li id="thumbnail_1169">
+                                                                                                <a href=""
+                                                                                                    data-idproduct="28"
+                                                                                                    rel="other-views"
+                                                                                                    class="thickbox-ajax-28 shown"
+                                                                                                    title="">
+                                                                                                    <img id="thumb_1169"
+                                                                                                        class="leo-hover-image">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <a href="" class="thumbnail product-thumbnail">
+                                                                            <img class="img-fluid"
+                                                                                src="https://www.enmuebles.com/img/p/8/2/82-home_default.jpg">
+                                                                        </a>
+                                                                        <ul class="product-flags">
+                                                                            <li class="product-flag discount">
+                                                                                -S/&nbsp;300.00</li>
+                                                                        </ul>
+
+                                                                        <div class="functional-buttons clearfix">
+                                                                            <div class="wishlist">
+                                                                                <a class="leo-wishlist-button btn-product btn"
+                                                                                    href="#" data-id-wishlist=""
+                                                                                    data-id-product="28"
+                                                                                    data-id-product-attribute="1692"
+                                                                                    title="Add to Wishlist">
+                                                                                    <span
+                                                                                        class="leo-wishlist-bt-loading cssload-speeding-wheel"></span>
+                                                                                    <span
+                                                                                        class="leo-wishlist-bt-content">
+                                                                                        <i class="nova-heart"></i>
+                                                                                        <span class="btn-title">Add to
+                                                                                            wishlist</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="button-container cart">
+                                                                                <form action="" method="post">
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="product-meta">
+
+                                                                        <h3 class="h3 product-title" itemprop="name"><a
+                                                                                href="">Sofá
+                                                                                2 cuerpos - Kamart</a></h3>
+
+                                                                        <div
+                                                                            class="product-price-and-shipping has_discount">
+                                                                            <span class="price" itemprop="offers">
+                                                                                <span itemprop="price"
+                                                                                    content="1599">S/&nbsp;1,599.00</span>
+                                                                            </span>
+                                                                            <span
+                                                                                class="regular-price">S/&nbsp;1,899.00</span>
+                                                                            <span
+                                                                                class="discount-amount discount-product">-S/&nbsp;300.00</span>
+                                                                        </div>
+                                                                        <div
+                                                                            class="highlighted-informations hidden-sm-down">
+
+                                                                            <div class="variant-links">
+                                                                                <a href="" class="color" title="Gris"
+                                                                                    aria-label="Gris"
+                                                                                    style="background-color: #AAB2BD"></a>
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-description-short"
+                                                                            itemprop="description"> Nuestros MUEBLES DE
+                                                                            SALA cuentan con Madera Tornillo, relleno en
+                                                                            Espuma Confort Paraíso, dunlopillo y/o
+                                                                            forli. Tapizado en Tela: Varsovia y/o...
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </article>
+                                                        </div>
+                                                        <div class="ajax_block_product col-sp-12 col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4
+                   first-in-line                                 last-item-of-tablet-line
+                                   last-item-of-mobile-line
+                                                  ">
+
+                                                            <article class="product-miniature js-product-miniature"
+                                                                data-id-product="29" data-id-product-attribute="1477"
+                                                                itemscope="" itemtype="http://schema.org/Product">
+                                                                <div class="thumbnail-container">
+                                                                    <div class="product-image">
+                                                                        <div class="leo-more-info hidden-md-down"
+                                                                            data-idproduct="29">
+                                                                            <div class="col-1">
+
+                                                                                <div class="views_block">
+                                                                                    <span class="view_scroll_spacer">
+                                                                                        <a class="view_scroll_left view_scroll_left_29 disable"
+                                                                                            rel="29" title="Other views"
+                                                                                            href="javascript:{}"><em
+                                                                                                class="fa fa-chevron-up"></em></a></span>
+                                                                                    <div
+                                                                                        class="thumbs_list thumbs_list_29">
+                                                                                        <ul class="thumbs_list_frame">
+                                                                                            <li id="thumbnail_794">
+                                                                                                <a href=""
+                                                                                                    data-idproduct="29"
+                                                                                                    rel="other-views"
+                                                                                                    class="thickbox-ajax-29 shown"
+                                                                                                    title="">
+                                                                                                    <img id="thumb_794"
+                                                                                                        src="https://www.enmuebles.com/img/p/7/9/4/794-cart_default.jpg"
+                                                                                                        alt=""
+                                                                                                        rel="https://www.enmuebles.com/img/p/7/9/4/794-home_default.jpg"
+                                                                                                        class="leo-hover-image">
+                                                                                                </a>
+                                                                                            </li>
+
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <a class="view_scroll_right view_scroll_right_29"
+                                                                                        rel="29" title="Other views"
+                                                                                        href="javascript:{}"><em
+                                                                                            class="fa fa-chevron-down"></em></a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <a href="" class="thumbnail product-thumbnail">
+                                                                            <img class="img-fluid"
+                                                                                src="https://www.enmuebles.com/img/p/9/6/96-home_default.jpg"
+                                                                                alt=""
+                                                                                data-full-size-image-url="https://www.enmuebles.com/img/p/9/6/96-large_default.jpg">
+                                                                        </a>
+                                                                        <ul class="product-flags">
+                                                                            <li class="product-flag discount">
+                                                                                -S/&nbsp;500.00</li>
+                                                                        </ul>
+
+                                                                        <div class="functional-buttons clearfix">
+                                                                            <div class="button-container cart">
+                                                                                <form action="" method="post">
+
+                                                                                    <button
+                                                                                        class="btn btn-primary btn-product add-to-cart leo-bt-cart leo-bt-cart_29 leo-enable"
+                                                                                        data-button-action="add-to-cart"
+                                                                                        type="submit">
+                                                                                        <span
+                                                                                            class="leo-loading cssload-speeding-wheel"></span>
+                                                                                        <span
+                                                                                            class="leo-bt-cart-content">
+                                                                                            <i
+                                                                                                class="nova-shopping-cart"></i>
+                                                                                            <span class="btn-title">Add
+                                                                                                to cart</span>
+                                                                                        </span>
+                                                                                    </button>
+
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="product-meta">
+
+                                                                        <h3 class="h3 product-title" itemprop="name"><a
+                                                                                href="">Sofá
+                                                                                3 cuerpos - Anyar</a></h3>
+                                                                        <div
+                                                                            class="product-price-and-shipping has_discount">
+                                                                            <span class="price" itemprop="offers"
+                                                                                itemscope=""
+                                                                                itemtype="http://schema.org/Offer">
+                                                                                <span itemprop="priceCurrency"
+                                                                                    content="PEN"></span><span
+                                                                                    itemprop="price"
+                                                                                    content="1599">S/&nbsp;1,599.00</span>
+                                                                            </span>
+
+
+                                                                            <span
+                                                                                class="regular-price">S/&nbsp;2,099.00</span>
+                                                                            <span
+                                                                                class="discount-amount discount-product">-S/&nbsp;500.00</span>
+                                                                        </div>
+
+                                                                        <div
+                                                                            class="highlighted-informations hidden-sm-down">
+
+                                                                            <div class="variant-links">
+                                                                                <a href="   " class="color" title="Gris"
+                                                                                    aria-label="Gris"
+                                                                                    style="background-color: #AAB2BD"></a>
+                                                                                <a href="" aria-label="Gris pardo"
+                                                                                    style="background-color: #CFC4A6"></a>
+
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="product-description-short"
+                                                                            itemprop="description"> Nuestros MUEBLES DE
+                                                                            SALA cuentan con Madera Tornillo, relleno en
+                                                                            Espuma Confort Paraíso, dunlopillo y/o
+                                                                            forli. Tapizado en Tela: Varsovia y/o...
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </article>
+
+
+                                                        </div>
+                                                        <div
+                                                            class="ajax_block_product col-sp-12 col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4
+                                                   first-item-of-tablet-line                 first-item-of-mobile-line                                ">
+
+                                                            <article class="product-miniature js-product-miniature"
+                                                                data-id-product="30" data-id-product-attribute="1676"
+                                                                itemscope="" itemtype="http://schema.org/Product">
+                                                                <div class="thumbnail-container">
+                                                                    <div class="product-image">
+
+                                                                        <div class="leo-more-info hidden-md-down"
+                                                                            data-idproduct="30">
+                                                                            <div class="col-1">
+
+                                                                                <div class="views_block">
+
+                                                                                    <div
+                                                                                        class="thumbs_list thumbs_list_30">
+                                                                                        <ul class="thumbs_list_frame">
+                                                                                            <li id="thumbnail_1168">
+                                                                                                <a href=""
+                                                                                                    data-idproduct="30"
+                                                                                                    rel="other-views"
+                                                                                                    class="thickbox-ajax-30 shown"
+                                                                                                    title="">
+                                                                                                    <img id="thumb_1168"
+                                                                                                        src="https://www.enmuebles.com/img/p/1/1/6/8/1168-cart_default.jpg"
+                                                                                                        alt=""
+                                                                                                        rel="https://www.enmuebles.com/img/p/1/1/6/8/1168-home_default.jpg"
+                                                                                                        class="leo-hover-image">
+                                                                                                </a>
+                                                                                            </li>
+
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <a href="" class="thumbnail product-thumbnail">
+                                                                            <img class="img-fluid"
+                                                                                src="https://www.enmuebles.com/img/p/1/0/0/100-home_default.jpg"
+                                                                                alt=""
+                                                                                data-full-size-image-url="https://www.enmuebles.com/img/p/1/0/0/100-large_default.jpg">
+                                                                        </a>
+                                                                        <ul class="product-flags">
+                                                                            <li class="product-flag discount">
+                                                                                -S/&nbsp;600.00</li>
+                                                                        </ul>
+
+                                                                        <div class="functional-buttons clearfix">
+
+
+                                                                            <div class="button-container cart">
+                                                                                <form action="" method="post">
+
+                                                                                    <button
+                                                                                        class="btn btn-primary btn-product add-to-cart leo-bt-cart leo-bt-cart_30 leo-enable"
+                                                                                        data-button-action="add-to-cart"
+                                                                                        type="submit">
+
+                                                                                        <span
+                                                                                            class="leo-bt-cart-content">
+                                                                                            <i
+                                                                                                class="nova-shopping-cart"></i>
+                                                                                            <span class="btn-title">Add
+                                                                                                to cart</span>
+                                                                                        </span>
+                                                                                    </button>
+
+                                                                                </form>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="product-meta">
+
+                                                                        <h3 class="h3 product-title" itemprop="name"><a
+                                                                                href="">Sofá
+                                                                                1 cuerpo - Kamart</a></h3>
+
+                                                                        <div
+                                                                            class="product-price-and-shipping has_discount">
+
+
+
+
+                                                                            <span class="price" itemprop="offers"
+                                                                                itemscope=""
+                                                                                itemtype="http://schema.org/Offer">
+                                                                                <span itemprop="priceCurrency"
+                                                                                    content="PEN"></span><span
+                                                                                    itemprop="price"
+                                                                                    content="1099">S/&nbsp;1,099.00</span>
+                                                                            </span>
+
+
+                                                                            <span
+                                                                                class="regular-price">S/&nbsp;1,699.00</span>
+                                                                            <span
+                                                                                class="discount-amount discount-product">-S/&nbsp;600.00</span>
+                                                                        </div>
+
+
+                                                                        <div
+                                                                            class="highlighted-informations hidden-sm-down">
+
+                                                                            <div class="variant-links">
+                                                                                <a href="" class="color" title="Gris"
+                                                                                    aria-label="Gris"
+                                                                                    style="background-color: #AAB2BD"></a>
+                                                                                <a href="" class="color" title="Beige"
+                                                                                    aria-label="Beige"
+                                                                                    style="background-color: #f5f5dc"></a>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="product-description-short"
+                                                                            itemprop="description"> Nuestros MUEBLES DE
+                                                                            SALA cuentan con Madera Tornillo, relleno en
+                                                                            Espuma Confort Paraíso, dunlopillo y/o
+                                                                            forli. Tapizado en Tela: Varsovia y/o...
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </article>
+
+
+                                                        </div>
+                                                        <div
+                                                            class="ajax_block_product col-sp-12 col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4
+                   first-in-line                                 first-item-of-tablet-line                 first-item-of-mobile-line                                ">
+
+                                                            <article class="product-miniature js-product-miniature"
+                                                                data-id-product="33" data-id-product-attribute="1761"
+                                                                itemscope="" itemtype="http://schema.org/Product">
+                                                                <div class="thumbnail-container">
+                                                                    <div class="product-image">
+
+                                                                        <div class="leo-more-info hidden-md-down"
+                                                                            data-idproduct="33">
+                                                                            <div class="col-1">
+
+                                                                                <div class="views_block">
+                                                                                    <span class="view_scroll_spacer">
+                                                                                        <a class="view_scroll_left view_scroll_left_33 disable"
+                                                                                            rel="33" title="Other views"
+                                                                                            href="javascript:{}"><em
+                                                                                                class="fa fa-chevron-up"></em></a></span>
+                                                                                    <div
+                                                                                        class="thumbs_list thumbs_list_33">
+                                                                                        <ul class="thumbs_list_frame">
+
+                                                                                        </ul>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <a href="" class="thumbnail product-thumbnail">
+                                                                            <img class="img-fluid"
+                                                                                src="https://www.enmuebles.com/img/p/1/3/0/130-home_default.jpg"
+                                                                                alt=""
+                                                                                data-full-size-image-url="https://www.enmuebles.com/img/p/1/3/0/130-large_default.jpg">
+                                                                        </a>
+                                                                        <ul class="product-flags">
+                                                                            <li class="product-flag discount">
+                                                                                -S/&nbsp;800.00</li>
+                                                                        </ul>
+
+                                                                        <div class="functional-buttons clearfix">
+                                                                            <div class="button-container cart">
+                                                                                <form method="post">
+
+                                                                                    <button
+                                                                                        class="btn btn-primary btn-product add-to-cart leo-bt-cart leo-bt-cart_33 leo-enable"
+                                                                                        data-button-action="add-to-cart"
+                                                                                        type="submit">
+                                                                                        <span
+                                                                                            class="leo-loading cssload-speeding-wheel"></span>
+                                                                                        <span
+                                                                                            class="leo-bt-cart-content">
+                                                                                            <i
+                                                                                                class="nova-shopping-cart"></i>
+                                                                                            <span class="btn-title">Add
+                                                                                                to cart</span>
+                                                                                        </span>
+                                                                                    </button>
+
+                                                                                </form>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="product-meta">
+
+
+                                                                        <h3 class="h3 product-title" itemprop="name"><a
+                                                                                href="">Juego
+                                                                                de sala 3 2 1 Krem</a></h3>
+
+
+                                                                        <div
+                                                                            class="product-price-and-shipping has_discount">
+
+
+
+
+                                                                            <span class="price" itemprop="offers"
+                                                                                itemscope=""
+                                                                                itemtype="http://schema.org/Offer">
+                                                                                <span itemprop="priceCurrency"
+                                                                                    content="PEN"></span><span
+                                                                                    itemprop="price"
+                                                                                    content="2599">S/&nbsp;2,599.00</span>
+                                                                            </span>
+
+
+                                                                            <span
+                                                                                class="regular-price">S/&nbsp;3,399.00</span>
+                                                                            <span
+                                                                                class="discount-amount discount-product">-S/&nbsp;800.00</span>
+                                                                        </div>
+
+                                                                        <div
+                                                                            class="highlighted-informations hidden-sm-down">
+
+                                                                            <div class="variant-links">
+                                                                                <a href="https://www.enmuebles.com/index.php?id_product=33&amp;id_product_attribute=1753&amp;rewrite=juego-de-sala-3-2-1-krem&amp;controller=product#/5-color-gris/23-textura_de_tela-textura_gamuza_velvet"
+                                                                                    class="color" title="Gris"
+                                                                                    aria-label="Gris"
+                                                                                    style="background-color: #AAB2BD"></a>
+
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="product-description-short"
+                                                                            itemprop="description"> Nuestros MUEBLES DE
+                                                                            SALA cuentan con Madera Tornillo, relleno en
+                                                                            Espuma Confort Paraíso, dunlopillo y/o
+                                                                            forli. Tapizado en Tela: Varsovia y/o...
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </article>
+
+
+                                                        </div>
+                                                        <div class="ajax_block_product col-sp-12 col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4
+                                                   last-item-of-tablet-line
+                                   last-item-of-mobile-line
+                                                  ">
+
+                                                            <article class="product-miniature js-product-miniature"
+                                                                data-id-product="34" data-id-product-attribute="1411"
+                                                                itemscope="" itemtype="">
+                                                                <div class="thumbnail-container">
+                                                                    <div class="product-image">
+
+                                                                        <a href="" class="thumbnail product-thumbnail">
+                                                                            <img class="img-fluid"
+                                                                                src="https://www.enmuebles.com/img/p/1/4/9/149-home_default.jpg"
+                                                                                alt=""
+                                                                                data-full-size-image-url="https://www.enmuebles.com/img/p/1/4/9/149-large_default.jpg">
+                                                                        </a>
+
+                                                                        <ul class="product-flags">
+                                                                            <li class="product-flag discount">
+                                                                                -S/&nbsp;400.00</li>
+                                                                        </ul>
+
+                                                                        <div class="functional-buttons clearfix">
+
+                                                                            <div class="wishlist">
+                                                                                <a class="leo-wishlist-button btn-product btn"
+                                                                                    href="#" data-id-wishlist=""
+                                                                                    data-id-product="34"
+                                                                                    data-id-product-attribute="1411"
+                                                                                    title="Add to Wishlist">
+                                                                                    <span
+                                                                                        class="leo-wishlist-bt-loading cssload-speeding-wheel"></span>
+                                                                                    <span
+                                                                                        class="leo-wishlist-bt-content">
+                                                                                        <i class="nova-heart"></i>
+                                                                                        <span class="btn-title">Add to
+                                                                                            wishlist</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="product-meta">
+
+
+                                                                        <h3 class="h3 product-title" itemprop="name"><a
+                                                                                href="https://www.enmuebles.com/index.php?id_product=34&amp;id_product_attribute=1411&amp;rewrite=sofa-2-cuerpos-dakar&amp;controller=product#/5-color-gris/23-textura_de_tela-textura_gamuza_velvet">Sofá
+                                                                                2 cuerpos - Anyar</a></h3>
+
+
+                                                                        <div
+                                                                            class="product-price-and-shipping has_discount">
+
+
+                                                                            <span
+                                                                                class="regular-price">S/&nbsp;1,699.00</span>
+                                                                            <span
+                                                                                class="discount-amount discount-product">-S/&nbsp;400.00</span>
+                                                                        </div>
+
+
+                                                                        <div
+                                                                            class="highlighted-informations hidden-sm-down">
+
+                                                                            <div class="variant-links">
+                                                                                <a href="" class="color" title="Gris"
+                                                                                    aria-label="Gris"
+                                                                                    style="background-color: #AAB2BD"></a>
+                                                                                <a href="dashboard.ejs" class="color"
+                                                                                    title="Beige" aria-label="Beige"
+                                                                                    style="background-color: #f5f5dc"></a>
+
+                                                                                <span class="js-count count">+12</span>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="product-description-short"
+                                                                            itemprop="description"> Nuestros MUEBLES DE
+                                                                            SALA cuentan con Madera Tornillo, relleno en
+                                                                            Espuma Confort Paraíso, dunlopillo y/o
+                                                                            forli. Tapizado en Tela: Varsovia y/o...
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </article>
+
+
+                                                        </div>
+                        </section>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
