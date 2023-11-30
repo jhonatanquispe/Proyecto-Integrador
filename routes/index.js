@@ -30,15 +30,22 @@ router.post('/dashboard', function(req, res, next) {
       req.flash('error',err);
       console.log(err);
     }else{
-      if(rows.length){
+      if(rows.length && rows[0]["nivel"]=='admin'){
         req.session.idu=rows[0]["id"];
         req.session.email=rows[0]["email"];
         req.session.loggedin=true;
         res.redirect('/dashboard');
       }else{
+        if(rows.length && rows[0]["nivel"]=='trabajador'){
+          req.session.idu=rows[0]["id"];
+          req.session.email=rows[0]["email"];
+          req.session.loggedin=true;
+          res.redirect('/dashboard2');
+        }else{
         req.flash('error','El usuario no existe...');
         res.redirect('/')
       }
+    } 
     }
   });
 });
@@ -58,6 +65,19 @@ router.get('/dashboard', function(req, res, next) {
   }
 });
 
+router.get('/dashboard2', function(req, res, next) {
+  if(!req.session.loggedin){
+    res.redirect('/login');
+  }else{
+    dbConn.query('SELECT count(id) as cantidad FROM categorias',function(err,rows)     {
+      if(err) {
+          req.flash('error', err); 
+      } else {
+        res.render('dashboard2',{data:rows});
+      }
+    });
+  }
+});
 router.get('/logout',function(req,res){
   req.session.destroy();
   res.redirect("/");
